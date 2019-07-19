@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
 const ProfileSchema = new mongoose.Schema({
-    userName: {
+    user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "userName"
+        ref: "user"
     },
     location: {
         type: String,
@@ -16,10 +16,10 @@ const ProfileSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    subscription: [{
-        userName: {
+    subscriptions: [{
+        user: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "userName"
+            ref: "user"
         },
         date: {
             type: Date,
@@ -27,9 +27,9 @@ const ProfileSchema = new mongoose.Schema({
         }
     }],
     subscribers: [{
-        userName: {
+        user: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "userName"
+            ref: "user"
         },
         date: {
             type: Date,
