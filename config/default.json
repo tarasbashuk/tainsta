@@ -1,6 +1,0 @@
-{
-    "mongoURI": "mongodb+srv://tarbas:tarbas123456@clustertainsta-6bxnz.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtSecret": "mysecrettoken",
-    "secretAccessKey": "dvhwwgZeHiaI3eazrJ6fh423lKwLDyKLOxgStsBt",
-    "accessKeyId": "AKIATU4JNJ436AUOFJIN"
-}
