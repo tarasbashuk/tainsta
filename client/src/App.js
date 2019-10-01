@@ -6,7 +6,7 @@ import Landing from './components/layout/Landing'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import AddPost from './components/posts/AddPost'
-import UploadFiles from './components/posts/UploadFiles'
+// import UploadFiles from './components/posts/UploadFiles'
 
 import Alert from './components/layout/Alert'
 
@@ -40,8 +40,9 @@ function App() {
             <Switch>
               <Route exact path="/register" component = {Register}/>
               <Route exact path="/login" component = {Login}/>
+              <Route exact path="/addpost" component = {AddPost}/>
               <PrivateRoute exact path="/dashboard" component = {Landing}/>
-              <PrivateRoute exact path="/addpost" component = {UploadFiles}/>
+              {/* <PrivateRoute exact path="/addpost" component = {AddPost}/> */}
             </Switch>
           </section>
         </Fragment>

@@ -30,7 +30,7 @@ const upload = multer({
 	fileFilter: function( req, file, cb ){
 		checkFileType( file, cb );
 	}
-}).single('profileImage');
+}).single('postImage');
 
 // Check File filter
 
