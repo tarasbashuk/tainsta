@@ -13,14 +13,21 @@
   "author": "Taras Bashuk",
   "license": "MIT",
   "dependencies": {
+    "aws-sdk": "^2.536.0",
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "config": "^3.1.0",
     "express": "^4.17.1",
+    "express-fileupload": "^1.1.6-alpha.5",
     "express-validator": "^5.3.1",
     "gravatar": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.15",
-    "request": "^2.88.0"
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "path": "^0.12.7",
+    "request": "^2.88.0",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react"
+import React, { useState } from "react"
 import { connect } from "react-redux"
 import { Link as LinkRouter, Redirect } from "react-router-dom"
 import PropTypes from "prop-types"
@@ -10,9 +10,9 @@ import {
   Link,
   Grid,
   Typography,
-  Container
+  Container, 
+  CssBaseline
 } from "@material-ui/core"
-import CssBaseline from "@material-ui/core/CssBaseline"
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined"
 import { makeStyles } from "@material-ui/core/styles"
 
@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.secondary.main
   },
   form: {
-    width: "100%", // Fix IE 11 issue.
+    width: "100%",
     marginTop: theme.spacing(1)
   },
   submit: {
@@ -165,4 +165,3 @@ export default connect(
   mapStateToProps,
   { login }
 )(Login)
-

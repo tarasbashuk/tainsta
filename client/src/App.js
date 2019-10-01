@@ -5,6 +5,8 @@ import PrivateRoute from './components/routing/PrivateRoute'
 import Landing from './components/layout/Landing'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
+import AddPost from './components/posts/AddPost'
+import UploadFiles from './components/posts/UploadFiles'
 
 import Alert from './components/layout/Alert'
 
@@ -39,6 +41,7 @@ function App() {
               <Route exact path="/register" component = {Register}/>
               <Route exact path="/login" component = {Login}/>
               <PrivateRoute exact path="/dashboard" component = {Landing}/>
+              <PrivateRoute exact path="/addpost" component = {UploadFiles}/>
             </Switch>
           </section>
         </Fragment>
