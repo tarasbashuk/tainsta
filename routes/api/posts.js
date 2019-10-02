@@ -22,10 +22,8 @@ const Post = require("../../models/Post")
 router.post("/", auth, async (req, res) => {
   try {
      upload(req, res, async err => {
-      // if (req.body === {} || req.body.caption === "") {
-      //   return res.status(400).json({msg: "Caption is required"})
-      // }
       if (err) {
+        console.error(err)
         res.status(400).json({
           msg: err
         })

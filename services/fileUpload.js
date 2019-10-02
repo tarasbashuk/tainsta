@@ -10,9 +10,9 @@ const secretAccessKey = config.get('secretAccessKey')
 // Init S3 storage
 
 const s3 = new aws.S3({
- accessKeyId,
- secretAccessKey,
- Bucket: "huinsta"
+	accessKeyId,
+	secretAccessKey,
+	Bucket: "huinsta"
 })
 
 // Inin single upload
@@ -23,26 +23,29 @@ const upload = multer({
 		bucket: 'huinsta',
 		acl: 'public-read',
 		key: function (req, file, cb) {
-			cb(null, path.basename( file.originalname, path.extname( file.originalname ) ) + '-' + Date.now() + path.extname( file.originalname ) )
+			cb(null, path.basename(file.originalname, path.extname(file.originalname)) + '-' + Date.now() + path.extname(file.originalname))
 		}
 	}),
-	limits:{ fileSize: 5000000 },
-	fileFilter: function( req, file, cb ){
-		checkFileType( file, cb );
+	limits: {
+		fileSize: 2000000
+	},
+	fileFilter: function (req, file, cb) {
+		checkFileType(file, cb);
 	}
 }).single('postImage');
 
 // Check File filter
 
-function checkFileType( file, cb ){
+function checkFileType(file, cb) {
 	const filetypes = /jpeg|jpg|png|gif/
-	const extname = filetypes.test( path.extname( file.originalname ).toLowerCase())
-  const mimetype = filetypes.test( file.mimetype )
-  
-	if( mimetype && extname ){
-		return cb( null, true )
+	const extname = filetypes.test(path.extname(file.originalname).toLowerCase())
+	const mimetype = filetypes.test(file.mimetype)
+
+	console.log("file", file)
+	if (mimetype && extname) {
+		return cb(null, true)
 	} else {
-		cb( 'Error: Images Only!' )
+		cb('Error: Images Only!')
 	}
 }
 
